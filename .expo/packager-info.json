@@ -1,9 +1,9 @@
 {
   "devToolsPort": 19002,
   "expoServerPort": 19000,
-  "packagerPort": null,
-  "packagerPid": null,
-  "expoServerNgrokUrl": null,
-  "packagerNgrokUrl": null,
-  "ngrokPid": null
+  "packagerPort": 19001,
+  "packagerPid": 9758,
+  "expoServerNgrokUrl": "https://ga-fzm.anonymous.philiphuern.exp.direct",
+  "packagerNgrokUrl": "https://packager.ga-fzm.anonymous.philiphuern.exp.direct",
+  "ngrokPid": 9776
 }
