@@ -9,6 +9,8 @@ import { PersistGate } from "redux-persist/lib/integration/react";
 import { EvaIconsPack } from '@ui-kitten/eva-icons';
 import Welcome from './src/screens/Authentication/Welcome';
 import { ThemeContext } from './src/ThemeContext';
+import BridgeList from './src/screens/Authentication/BridgeList';
+import Pairing from './src/screens/Authentication/Paring';
 
 const Stack = createStackNavigator();
 
@@ -35,6 +37,8 @@ export default function App() {
               <NavigationContainer>
                 <Stack.Navigator initialRouteName="Welcome">
                   <Stack.Screen options={{ headerShown: false }} name="Welcome" component={Welcome} />
+                  <Stack.Screen options={{ headerShown: false }} name="BridgeList" component={BridgeList} />
+                  <Stack.Screen options={{ headerShown: false }} name="Pairing" component={Pairing} />
                 </Stack.Navigator>
               </NavigationContainer>
             </ApplicationProvider>

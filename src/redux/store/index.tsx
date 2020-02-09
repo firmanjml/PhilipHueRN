@@ -9,6 +9,7 @@ const persistorConfig = {
     key: 'root',
     storage: AsyncStorage,
     stateReconciler: autoMergeLevel2,
+    blacklist: ['scan_bridge_list', 'loading']
 };
 
 const pReducer = persistReducer(persistorConfig, reducer);

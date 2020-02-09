@@ -4,13 +4,12 @@ import { View, StatusBar, Alert } from 'react-native';
 import { useSelector, useDispatch } from 'react-redux';
 import { SearchForBridge } from '../../redux/action';
 
-export default function Welcome() {
+export default function Welcome({ navigation }) {
     const bridges = useSelector(state => state.scan_bridge_list);
     const loading = useSelector(state => state.loading);
 
     const dispatch = useDispatch();
     const updatelight = useCallback(() => dispatch(SearchForBridge()), [dispatch]);
-
 
     useEffect(() => {
         if (bridges.length > 0) {
@@ -30,6 +29,14 @@ export default function Welcome() {
         }
     }, [bridges]);
 
+    function proceedToSelectionBridge () {
+        if (bridges.length === 1) {
+            navigation.navigate('Pairing', { reference: bridges[0] });
+        } else {
+            navigation.navigate('BridgeList');
+        }
+    }
+
 
     return (
         <Layout style={{ flex: 1, marginTop: StatusBar.currentHeight, padding: 40 }}>
@@ -39,7 +46,12 @@ export default function Welcome() {
             </View>
             <View style={{ position: 'absolute', bottom: 30, left: 30, right: 30 }}>
                 <View style={{ marginVertical: 5 }}>
-                    <Button status="info" onPress={() => updatelight()} disabled={loading}>{ loading ? "Searching..." : "Search for Bridge" }</Button>
+                    {
+                        bridges.length === 0 ? 
+                            (<Button status="info" onPress={() => updatelight()} disabled={loading}>{ loading ? "Searching..." : "Search for Bridge" }</Button>)
+                        :
+                            (<Button status="info" onPress={() => proceedToSelectionBridge()}>Pair Now</Button>)
+                    }
                 </View>
                 <View style={{ marginVertical: 5 }}>
                     <Button status="control">Manual Search</Button>
