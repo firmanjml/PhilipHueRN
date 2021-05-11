@@ -16,7 +16,7 @@
     "@ui-kitten/eva-icons": "^4.3.2",
     "expo": "~36.0.0",
     "jshue": "https://github.com/firmanjml/jshue",
-    "lodash": "^4.17.15",
+    "lodash": "^4.17.21",
     "react": "~16.9.0",
     "react-dom": "~16.9.0",
     "react-native": "https://github.com/expo/react-native/archive/sdk-36.0.0.tar.gz",
